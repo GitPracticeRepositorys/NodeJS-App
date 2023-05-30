@@ -23,7 +23,7 @@ jobs:
       - script: npm install
         displayName: 'Install npm dependencies'
 
-      - script: npm run build
+      - script: npm install
         displayName: 'Build the Node.js application'
 
       - task: Docker@2
