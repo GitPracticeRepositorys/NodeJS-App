@@ -1,11 +1,12 @@
 {
-  "name": "your-app",
+  "name": "NodeJS-App",
   "version": "1.0.0",
   "scripts": {
-    "build": "your-build-command"
+    "build": "npm run build"
   },
   "dependencies": {
-    // your dependencies
+    "dependency1": "^1.0.0",
+    "dependency2": "^2.0.0"
   },
-  // other properties
+  "otherProperties": "value"
 }
