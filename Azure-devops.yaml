@@ -22,7 +22,7 @@ steps:
     containerRegistry: 'Docker-Hub-Connection' # Replace with the name of your Docker service connection
     repository: 'shivakrishna99/az-nodejs-app' # Replace with the name of your Docker image repository
     command: 'buildAndPush'
-    Dockerfile: 'Dockerfile'
+    Dockerfile: '**/Dockerfile'
     buildContext: '$(Build.SourcesDirectory)'
     tags: |
       latest
