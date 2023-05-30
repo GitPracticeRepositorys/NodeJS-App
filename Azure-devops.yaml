@@ -24,7 +24,7 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'Docker-Hub-Connection' # Replace with the name of your Docker service connection
-    repository: 'shivakrishna99/my-node-app' # Replace with the name of your Docker image
+    repository: 'shivakrishna99/AZ-NodeJS-App' # Replace with the name of your Docker image
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
     buildContext: '$(Build.SourcesDirectory)'
