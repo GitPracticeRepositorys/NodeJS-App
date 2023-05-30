@@ -1,3 +1,8 @@
+trigger:
+  branches:
+    include:
+      - main
+
 pool:
   vmImage: 'ubuntu-latest'
 
@@ -7,18 +12,17 @@ steps:
     versionSpec: '14.x'
   displayName: 'Install Node.js'
 
-- task: Npm@1
-  inputs:
-    command: 'install'
-  displayName: 'npm install'
+- script: |
+    npm install
+  displayName: 'Install dependencies and build'
 
 - task: Docker@2
+  displayName: 'Build and push Docker image'
   inputs:
     containerRegistry: 'Docker-Hub-Connection' # Replace with the name of your Docker service connection
-    repository: 'shivakrishna99/AZ-NodeJS-App' # Replace with the name of your Docker image
+    repository: 'shivakrishna99/az-nodejs-app' # Replace with the name of your Docker image repository
     command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+    Dockerfile: 'Dockerfile'
     buildContext: '$(Build.SourcesDirectory)'
     tags: |
       latest
-  displayName: 'Build and push Docker image'
