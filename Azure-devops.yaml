@@ -1,6 +1,3 @@
-trigger:
-- main
-
 pool:
   vmImage: 'ubuntu-latest'
 
@@ -13,12 +10,6 @@ steps:
 - task: Npm@1
   inputs:
     command: 'install'
-  displayName: 'npm install'
-
-- task: Npm@1
-  inputs:
-    command: 'install'
-    arguments: 'install'
   displayName: 'npm install'
 
 - task: Docker@2
