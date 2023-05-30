@@ -2,7 +2,7 @@
   "name": "NodeJS-App",
   "version": "1.0.0",
   "scripts": {
-    "build": "npm run build"
+    "build": "npm install"
   },
   "dependencies": {
     "dependency1": "^1.0.0",
